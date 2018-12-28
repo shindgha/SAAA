@@ -1,0 +1,37 @@
+CREATE TABLE deviceInfo(
+ID text primary key not null,
+Name text not null,
+Code text,
+IP text not null unique,
+Region_1 text not null,
+Region_2 text,
+Type text not null)
+
+
+CREATE TABLE dataText(
+ID text primary key not null,
+Result text
+etc text
+);
+
+CREATE TABLE deviceType(
+Type text primary key not null unique,
+LoginPrompt text not null,
+Username text not null,
+PasswordPrompt text not null,
+Password text not null,
+Commands text not null
+);
+
+insert into deviceType values("ANY-LAG", "login: ", "Password: ", "LUCENT01", "UI-PSWD-01", "rtrv-alm-all;,rtrv-alm-env;,canc-user::LUCENT01;");
+insert into deviceType values("ANY-LLS", "login: ", "Password: ", "LUCENT01", "UI-PSWD-01", "rtrv-alm-all;,rtrv-alm-env;,canc-user::LUCENT01;");
+insert into deviceType values("Linux_1", "login: ", "Password: ", "shindgha", "%passwdsy10%", "cd /etc,ls -al,exit");
+insert into deviceType values("Linux_2", "login: ", "Password: ", "shindgha", "%passwdsy10%", "cd /etc,ls -al,exit");
+insert into deviceType values("Linux_3", "login: ", "Password: ", "shindgha", "!passwd!", "cd /etc,ls -al,exit");
+
+
+save
+['1544049', '약전008', '약전008', '10.164.19.10', '포항', '약전', 'Anymedia_LAG']
+
+view
+('1544049', '약전008', '약전008', '10.164.19.10', '포항', '약전', 'Anymedia_LAG')
